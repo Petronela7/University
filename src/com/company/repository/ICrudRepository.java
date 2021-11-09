@@ -2,7 +2,7 @@ package com.company.repository;
 
 public interface ICrudRepository<E> {
     /**
-     * @param -the entity to be returned id must not be null
+     * @param entity-the entity to be returned id must not be null
      * @return the entity with the specified id or null - if there is no entity with the given id
      */
     E findOne(E entity);

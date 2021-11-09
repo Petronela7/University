@@ -2,7 +2,11 @@ package com.company.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
+/**
+ * Class Teacher represents a teacher object
+ */
 public class Teacher extends Person {
     private long teacherID;
     private String firstName;
@@ -39,6 +43,19 @@ public class Teacher extends Person {
 
     public void setTaughtCourses(List<Course> taughtCourses) {
         this.taughtCourses = taughtCourses;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Teacher teacher = (Teacher) o;
+        return teacherID == teacher.teacherID;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(teacherID);
     }
 
     @Override

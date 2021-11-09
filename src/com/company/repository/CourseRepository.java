@@ -3,17 +3,25 @@ import com.company.model.Course;
 
 public class CourseRepository extends InMemoryRepository<Course>{
 
+    public CourseRepository()
+    {
+        super();
+    }
+
     /**
-     * @param entity entity must not be null
-     * @return the older entity - if the entity is updated, otherwise returns the entity - (e.g. id does not exist).
+     * @param entity must not be null
+     * @return null - if the entity is updated, otherwise returns the entity
      */
     @Override
     public Course update(Course entity) {
-        for(Course c:repoList)
-        {
-            if(c.getCourseName() == entity.getCourseName())
+        for(Course c:repoList) {
+            if (c.equals(entity)){
                 c.setCredits(entity.getCredits());
-            return c;
+                c.setNumberStudentsMax(entity.getNumberStudentsMax());
+                c.setTeacher(entity.getTeacher());
+                c.setStudentList(entity.getStudentList());
+                return null;
+            }
         }
         return entity;
     }

@@ -11,7 +11,7 @@ public abstract class InMemoryRepository<E> implements ICrudRepository<E> {
     }
 
     /**
-     * @param -the entity to be returned
+     * @param entity-the entity to be returned
      * @return the entity , null - if there is no entity
      */
     @Override
@@ -47,7 +47,6 @@ public abstract class InMemoryRepository<E> implements ICrudRepository<E> {
 
     /**
      * removes the entity
-     *
      * @param entity must be not null
      * @return the removed entity or null if there is no entity
      */
@@ -63,12 +62,5 @@ public abstract class InMemoryRepository<E> implements ICrudRepository<E> {
 
     }
 
-    /**
-     * @param entity must not be null
-     * @return null - if the entity is updated, otherwise returns the entity - (e.g. id does not exist).
-     */
-    @Override
-    public E update(E entity) {
-        return null;
-    }
+
 }

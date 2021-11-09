@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Class Course represents a course object
+ */
 public class Course {
     private String courseName;
     private Teacher teacher;
@@ -59,13 +62,18 @@ public class Course {
         this.studentList = studentList;
     }
 
+    /**
+     *
+     * @param o object to be compared
+     * @return true or false, depending on whether objects are equal or not
+     */
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Course course = (Course) o;
-        return numberStudentsMax == course.numberStudentsMax && credits == course.credits && courseName.equals(course.courseName) && teacher.equals(course.teacher) && studentList.equals(course.studentList);
+        return Objects.equals(courseName, course.courseName);
     }
 
     @Override
@@ -73,6 +81,9 @@ public class Course {
         return Objects.hash(courseName, teacher, numberStudentsMax, credits, studentList);
     }
 
+    /**
+     * @return the object in a string format
+     */
     @Override
     public String toString() {
         return "Course{" +

@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
+/**
+ * Class Student represents a Student object
+ */
 public class Student extends Person{
     private long studentID;
     private String firstName;
@@ -61,13 +63,19 @@ public class Student extends Person{
         this.enrolledCourses = enrolledCourses;
     }
 
+    /**
+     *
+     * @param o object to be compared
+     * @return true or false, depending on whether objects are equal or not
+     */
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return studentID == student.studentID && totalCredits == student.totalCredits && Objects.equals(enrolledCourses, student.enrolledCourses);
+        return studentID == student.studentID;
     }
 
     @Override
@@ -75,6 +83,9 @@ public class Student extends Person{
         return Objects.hash(studentID, totalCredits, enrolledCourses);
     }
 
+    /**
+     * @return the object in a string format
+     */
     @Override
     public String toString() {
         return "Student{" +
